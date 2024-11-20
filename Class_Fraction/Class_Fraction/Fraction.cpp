@@ -1,4 +1,4 @@
-#include "fraction.h"
+п»ї#include "fraction.h"
 #include <cmath>
 
 int Fraction::gcd(int a, int b) {
@@ -10,7 +10,7 @@ int Fraction::gcd(int a, int b) {
 
 void Fraction::simplify() {
     if (denominator == 0) {
-        throw std::invalid_argument("Знаменатель не может быть нулем");
+        throw std::invalid_argument("Р—РЅР°РјРµРЅР°С‚РµР»СЊ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅСѓР»РµРј");
     }
     int divisor = gcd(numerator, denominator);
     numerator /= divisor;
@@ -19,7 +19,7 @@ void Fraction::simplify() {
 Fraction Fraction:: reciprocal(){
     if (numerator == 0)
     {
-        throw std::runtime_error("Обратная дробь не определена");
+        throw std::runtime_error("РћР±СЂР°С‚РЅР°СЏ РґСЂРѕР±СЊ РЅРµ РѕРїСЂРµРґРµР»РµРЅР°");
     }
     return Fraction(denominator, numerator);
 }
@@ -27,7 +27,7 @@ Fraction::Fraction() : numerator(1), denominator(2) {}
 
 Fraction::Fraction(int num, int den) : numerator(num), denominator(den) {
     if (den == 0) {
-        throw std::invalid_argument("Знаменатель не может быть равен нулю.");
+        throw std::invalid_argument("Р—РЅР°РјРµРЅР°С‚РµР»СЊ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ СЂР°РІРµРЅ РЅСѓР»СЋ.");
     }
     simplify();
 }
@@ -35,12 +35,12 @@ Fraction::Fraction(int num, int den) : numerator(num), denominator(den) {
 void Fraction::to_Mixed()
 {
     if (denominator == 0) {
-        throw std::invalid_argument("Знаменатель не может быть равен нулю.");
+        throw std::invalid_argument("Р—РЅР°РјРµРЅР°С‚РµР»СЊ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ СЂР°РІРµРЅ РЅСѓР»СЋ.");
     }
     if (numerator > denominator) {
         int whole = numerator / denominator;
         int remainder = numerator % denominator;
-        std::cout << "Смешанная дробь: " << whole << " " << remainder << "/" << denominator << std::endl;
+        std::cout << "РЎРјРµС€Р°РЅРЅР°СЏ РґСЂРѕР±СЊ: " << whole << " " << remainder << "/" << denominator << std::endl;
     }
 }
 int Fraction::getNumerator() {
@@ -58,7 +58,7 @@ int Fraction::getDenominator() {
 
 void Fraction::setDenominator(int den) {
     if (den == 0) {
-        throw std::invalid_argument("Знаменатель не может быть равен нулю.");
+        throw std::invalid_argument("Р—РЅР°РјРµРЅР°С‚РµР»СЊ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ СЂР°РІРµРЅ РЅСѓР»СЋ.");
     }
     denominator = den;
     simplify();
@@ -84,7 +84,7 @@ Fraction Fraction::operator*(const Fraction& other) {
 
 Fraction Fraction::operator/(const Fraction& other) {
     if (other.numerator == 0) {
-        throw std::domain_error("Деление на ноль недопустимо.");
+        throw std::invalid_argument("Р”РµР»РµРЅРёРµ РЅР° РЅРѕР»СЊ РЅРµРґРѕРїСѓСЃС‚РёРјРѕ.");
     }
     int newNumerator = numerator * other.denominator;
     int newDenominator = denominator * other.numerator;
@@ -108,12 +108,12 @@ bool Fraction::operator!=(const Fraction& other) {
 }
 
 void Fraction::input() {
-    std::cout << "Введите числитель: ";
+    std::cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»РёС‚РµР»СЊ: ";
     std::cin >> numerator;
-    std::cout << "Введите знаменатель: ";
+    std::cout << "Р’РІРµРґРёС‚Рµ Р·РЅР°РјРµРЅР°С‚РµР»СЊ: ";
     std::cin >> denominator;
     if (denominator == 0) {
-        throw std::invalid_argument("Знаменатель не может быть нулем");
+        throw std::invalid_argument("Р—РЅР°РјРµРЅР°С‚РµР»СЊ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅСѓР»РµРј");
     }   
         simplify();
 }
