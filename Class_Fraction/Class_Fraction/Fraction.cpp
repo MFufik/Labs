@@ -1,4 +1,4 @@
-﻿#include "fraction.h"
+﻿#include "Fraction.h"
 #include <cmath>
 
 int Fraction::gcd(int a, int b) {

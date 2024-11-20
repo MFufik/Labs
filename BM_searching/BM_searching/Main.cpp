@@ -4,7 +4,34 @@
 
 // Индекс первого вхождения подстроки
 size_t findFirstOccurrence(const std::string& text, const std::string& pattern) {
-    return text.find(pattern);
+    int TAB[256];
+    int  k, N, M;
+    N = text.length();
+    M = pattern.length();
+    for (int i = 0; i < 256; i++)
+    {
+        TAB[i] = M;
+    }
+    for (int i = 0; i < M - 1; i++)
+    {
+        TAB[pattern[i]] = M - i - 1;
+
+    }
+    int i = M - 1;
+
+    do {
+       int  j = M - 1;
+        k = i;
+        while ((j >= 0) && (text[k] == pattern[j]))
+        {
+            j--; k--;
+        }
+        if (j < 0) return k + 1;
+        i = k + TAB[text[i]];
+
+        //printf("%d\n", i);
+    } while (i < N);
+    return -1;
 }
 
 //Индексы всех вхождений подстроки

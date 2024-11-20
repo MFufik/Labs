@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "fraction.h"
+#include "Fraction.h"
 
 int main() {
     setlocale(LC_ALL, "Russian");
@@ -34,7 +34,7 @@ int main() {
         f3.input();
         std::cout << "Введенная дробь: ";
         f3.output();
-        f3.to_Mixed();
+        f3.toMixed();
         Fraction f3_rec = f3.reciprocal();
         std::cout << "Обратная дробь:";
         f3_rec.output();
