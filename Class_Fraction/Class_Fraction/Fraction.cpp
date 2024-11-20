@@ -7,7 +7,6 @@ int Fraction::gcd(int a, int b) {
     }
     return gcd(b, a % b);
 }
-
 void Fraction::simplify() {
     if (denominator == 0) {
         throw std::invalid_argument("Знаменатель не может быть нулем");
@@ -32,7 +31,7 @@ Fraction::Fraction(int num, int den) : numerator(num), denominator(den) {
     simplify();
 }
 
-void Fraction::to_Mixed()
+void Fraction::toMixed()
 {
     if (denominator == 0) {
         throw std::invalid_argument("Знаменатель не может быть равен нулю.");
@@ -43,7 +42,7 @@ void Fraction::to_Mixed()
         std::cout << "Смешанная дробь: " << whole << " " << remainder << "/" << denominator << std::endl;
     }
 }
-int Fraction::getNumerator() {
+int Fraction::getNumerator() const {
     return numerator;
 }
 
@@ -52,7 +51,7 @@ void Fraction::setNumerator(int num) {
     simplify();
 }
 
-int Fraction::getDenominator() {
+int Fraction::getDenominator() const {
     return denominator;
 }
 
@@ -64,25 +63,25 @@ void Fraction::setDenominator(int den) {
     simplify();
 }
 
-Fraction Fraction::operator+(const Fraction& other) {
+Fraction Fraction::operator+(const Fraction& other) const {
     int newNumerator = numerator * other.denominator + denominator * other.numerator;
     int newDenominator = denominator * other.denominator;
     return Fraction(newNumerator, newDenominator);
 }
 
-Fraction Fraction::operator-(const Fraction& other) {
+Fraction Fraction::operator-(const Fraction& other) const {
     int newNumerator = numerator * other.denominator - denominator * other.numerator;
     int newDenominator = denominator * other.denominator;
     return Fraction(newNumerator, newDenominator);
 }
 
-Fraction Fraction::operator*(const Fraction& other) {
+Fraction Fraction::operator*(const Fraction& other) const {
     int newNumerator = numerator * other.numerator;
     int newDenominator = denominator * other.denominator;
     return Fraction(newNumerator, newDenominator);
 }
 
-Fraction Fraction::operator/(const Fraction& other) {
+Fraction Fraction::operator/(const Fraction& other) const {
     if (other.numerator == 0) {
         throw std::invalid_argument("Деление на ноль недопустимо.");
     }
@@ -91,19 +90,19 @@ Fraction Fraction::operator/(const Fraction& other) {
     return Fraction(newNumerator, newDenominator);
 }
 
-bool Fraction::operator>(const Fraction& other) {
+bool Fraction::operator>(const Fraction& other) const {
     return (numerator * other.denominator) > (denominator * other.numerator);
 }
 
-bool Fraction::operator<(const Fraction& other) {
+bool Fraction::operator<(const Fraction& other) const {
     return (numerator * other.denominator) < (denominator * other.numerator);
 }
 
-bool Fraction::operator==(const Fraction& other) {
+bool Fraction::operator==(const Fraction& other) const {
     return (numerator * other.denominator) == (denominator * other.numerator);
 }
 
-bool Fraction::operator!=(const Fraction& other) {
+bool Fraction::operator!=(const Fraction& other) const {
     return (numerator * other.denominator) != (denominator * other.numerator);
 }
 
@@ -118,7 +117,7 @@ void Fraction::input() {
         simplify();
 }
 
-void Fraction::output() {
+void Fraction::output()const {
     std::cout << numerator << "/" << denominator << std::endl;
 }
 

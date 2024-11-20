@@ -12,27 +12,31 @@ private:
 public:
     Fraction();
     Fraction(int num, int den);
-    void to_Mixed(); // Вывод смешанной дроби
+    void toMixed(); // Вывод смешанной дроби
     Fraction reciprocal(); // Получение обратной дроби
-    
-    int getNumerator();
+    struct MixedFractoin
+    {
+        int whole;
+
+    };
+    int getNumerator() const;
     void setNumerator(int num);
 
-    int getDenominator();
+    int getDenominator() const;
     void setDenominator(int den);
 
-    Fraction operator+(const Fraction& other);
-    Fraction operator-(const Fraction& other);
-    Fraction operator*(const Fraction& other);
-    Fraction operator/(const Fraction& other);
+    Fraction operator+(const Fraction& other) const;
+    Fraction operator-(const Fraction& other) const;
+    Fraction operator*(const Fraction& other) const;
+    Fraction operator/(const Fraction& other) const;
 
-    bool operator>(const Fraction& other);
-    bool operator<(const Fraction& other);
-    bool operator==(const Fraction& other);
-    bool operator!=(const Fraction& other);
+    bool operator>(const Fraction& other) const;
+    bool operator<(const Fraction& other) const;
+    bool operator==(const Fraction& other) const;
+    bool operator!=(const Fraction& other) const;
 
     void input();
-    void output();
+    void output() const;
 
     
 };
