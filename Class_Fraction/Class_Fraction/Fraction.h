@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 
 
@@ -12,8 +12,8 @@ private:
 public:
     Fraction();
     Fraction(int num, int den);
-    void to_Mixed(); // Вывол смешанной дроби
-    Fraction reciprocal(); // Получение обратной дроби
+    void to_Mixed(); // Р’С‹РІРѕРґ СЃРјРµС€Р°РЅРЅРѕР№ РґСЂРѕР±Рё
+    Fraction reciprocal(); // РџРѕР»СѓС‡РµРЅРёРµ РѕР±СЂР°С‚РЅРѕР№ РґСЂРѕР±Рё
     
     int getNumerator();
     void setNumerator(int num);

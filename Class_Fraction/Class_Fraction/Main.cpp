@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "fraction.h"
 
 int main() {
@@ -30,22 +30,22 @@ int main() {
     std::cout << "f1 != f2: " << (f1 != f2) << std::endl;
     try {
         Fraction f3;
-        std::cout << "Ââåäèòå äðîáü: " << std::endl;
+        std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ñ€Ð¾Ð±ÑŒ: " << std::endl;
         f3.input();
-        std::cout << "Ââåäåííàÿ äðîáü: ";
+        std::cout << "Ð’Ð²ÐµÐ´ÐµÐ½Ð½Ð°Ñ Ð´Ñ€Ð¾Ð±ÑŒ: ";
         f3.output();
         f3.to_Mixed();
         Fraction f3_rec = f3.reciprocal();
-        std::cout << "Îáðàòíàÿ äðîáü:";
+        std::cout << "ÐžÐ±Ñ€Ð°Ñ‚Ð½Ð°Ñ Ð´Ñ€Ð¾Ð±ÑŒ:";
         f3_rec.output();
 
     }
     catch (const std::invalid_argument& e) {
-        std::cerr << "Îøèáêà: " << e.what() << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ°: " << e.what() << std::endl;
     }
     catch (const std::runtime_error& e)
     {
-        std::cerr << "Îøèáêà: " << e.what() << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ°: " << e.what() << std::endl;
     }
     return 0;
 }
